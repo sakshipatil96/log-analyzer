@@ -1,0 +1,20 @@
+2026-09-17T08:05:12 INFO Application started
+2026-09-17T08:12:45 INFO Listening on port 8080
+2026-09-17T08:27:03 WARN Cache miss for customer 42
+2026-09-17T09:01:10 ERROR Connection refused
+2026-09-17T09:08:22 INFO Retrying database connection
+2026-09-17T09:15:44 ERROR Connection refused
+2026-09-17T09:31:05 WARN Slow response from payments service
+2026-09-17T10:02:19 INFO Scheduled job started
+2026-09-17T10:14:38 ERROR Request timed out
+2026-09-17T10:22:57 ERROR Connection refused
+2026-09-17T10:37:11 INFO Scheduled job completed
+2026-09-17T11:03:49 WARN Disk usage above 80 percent
+2026-09-17T11:16:20 ERROR Request timed out
+2026-09-17T11:28:33 INFO Health check passed
+2026-09-17T12:04:14 ERROR Connection refused
+2026-09-17T12:19:26 INFO User session expired
+2026-09-17T12:41:52 WARN Background task delayed
+2026-09-17T13:07:09 ERROR Request timed out
+this is not a valid log line
+2026-09-17T13:20:00 DEBUG Unsupported level entry
