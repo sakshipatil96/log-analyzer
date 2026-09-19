@@ -9,7 +9,16 @@ Log Analyzer is a small Java command-line tool that reads application log files,
 
 ## Why Streams over loops
 
-The parsing and aggregation code uses Java Streams and `Optional` to express filtering, grouping, counting, and the no-error case declaratively. Compared with a representative hand-written implementation using nested loops, mutable maps, and repeated null guards, this can reduce the aggregation portion by roughly 65%. That is an illustrative maintainability and line-count comparison—not a performance benchmark or a claim about the entire application.
+The aggregation code uses Java Streams and `Optional` to express filtering, grouping, counting, and the no-error case declaratively. A `cloc` comparison of equivalent reference implementations measured a **49% reduction** in nonblank, non-comment code lines for the Stream version.
+
+| Measurement | Result |
+| --- | ---: |
+| Stream/Optional reference | 31 code lines |
+| Loop/`HashMap` reference | 61 code lines |
+| Reduction | `(61 - 31) / 61 = 49.18%` → **49%** |
+| Tool | `cloc` 2.10 |
+
+The throwaway references used identical imports, class boilerplate, and method signatures. Both implement level counting, ERROR-only hourly grouping, an empty result when no errors exist, and alphabetical tie-breaking for recurring errors. The loop version uses enhanced `for` loops, `HashMap`, explicit count updates, null checks, and manual top-error selection. This is a comparison of one equivalent aggregation implementation—not a performance benchmark, a universal line-count claim, or a measure of the whole application.
 
 ## Usage
 
